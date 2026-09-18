@@ -3,7 +3,7 @@ from tkinter import ttk, messagebox
 import sqlite3, csv, json, requests
 from datetime import datetime
 DB_NAME = "database/morgue.db"
-API_URL = "http://localhost:3000/api/data"
+API_URL = "http://localhost:3001/api/data"
 API_KEY = "PEGINTI_SECRET_2024"
 def init_db():
     import os; os.makedirs("database", exist_ok=True)
