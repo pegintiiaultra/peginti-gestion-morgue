@@ -1,44 +1,53 @@
 #!/bin/bash
-BASE_URL="http://localhost:3001"
-API_KEY="PEGINTI_SECRET_2025"
 
-echo "=== Test API Morgue ==="
+BASE_URL="http://localhost:3001/api"
 
-TOKEN=$(curl -s -X POST $BASE_URL/api/login \
+# Couleurs
+GREEN="\033[0;32m"
+CYAN="\033[0;36m"
+RESET="\033[0m"
+
+echo -e "${CYAN}=== 🚀 Test API Morgue ===${RESET}"
+
+# ➕ Ajouter un dépôt
+echo -e "${GREEN}>> Ajout dépôt${RESET}"
+curl -s -X POST $BASE_URL/depot \
   -H "Content-Type: application/json" \
-  -d '{"username":"peginti"}' | jq -r '.token')
+  -d '{"numero_depot":"D001","nom_defunt":"Jean","provenance":"Yaoundé","deposant":"Famille","casier":"C1","decharge_entree":"OK"}'
+echo -e "\n"
 
-echo "Token reçu: $TOKEN"
+# 📋 Lister les dépôts
+echo -e "${GREEN}>> Liste dépôts${RESET}"
+curl -s $BASE_URL/depot
+echo -e "\n"
 
-echo "=== Secure Data ==="
-curl -s $BASE_URL/api/secure-data -H "Authorization: Bearer $TOKEN"
+# ➡️ Ajouter un transfert
+echo -e "${GREEN}>> Ajout transfert${RESET}"
+curl -s -X POST $BASE_URL/transfert \
+  -H "Content-Type: application/json" \
+  -d '{"depot_id":1,"date_transfert":"2026-09-24","destination":"Douala","raison":"Autopsie","nom_retirant":"Docteur","decharge_transfert":"OK","agent":"AgentX"}'
+echo -e "\n"
 
-echo "=== Liste des corps (vide au départ) ==="
-curl -s $BASE_URL/api/corps -H "x-api-key: $API_KEY"
+# 📋 Lister les transferts
+echo -e "${GREEN}>> Liste transferts${RESET}"
+curl -s $BASE_URL/transfert
+echo -e "\n"
 
-echo "=== Ajout d’un corps VALIDE ==="
-curl -s -X POST $BASE_URL/api/corps \
-  -H "Content-Type: application/json" -H "x-api-key: $API_KEY" \
-  -d '{"nom":"Doe","prenom":"John","age":45,"sexe":"M","date_deces":"2026-09-19","cause_deces":"Accident"}'
+# ⚰️ Ajouter une sortie
+echo -e "${GREEN}>> Ajout sortie${RESET}"
+curl -s -X POST $BASE_URL/sortie \
+  -H "Content-Type: application/json" \
+  -d '{"depot_id":1,"date_sortie":"2026-09-24","heure":"10:00","destination_finale":"Village","type_sortie":"Inhumation","nom_retirant":"Famille","decharge_sortie":"OK","frais_solde":50000}'
+echo -e "\n"
 
-echo "=== Liste mise à jour ==="
-curl -s $BASE_URL/api/corps -H "x-api-key: $API_KEY"
+# 📋 Lister les sorties
+echo -e "${GREEN}>> Liste sorties${RESET}"
+curl -s $BASE_URL/sortie
+echo -e "\n"
 
-echo "=== Ajout d’un corps INVALIDE (age string) ==="
-curl -s -X POST $BASE_URL/api/corps \
-  -H "Content-Type: application/json" -H "x-api-key: $API_KEY" \
-  -d '{"nom":"Smith","age":"quarante"}'
+# 📊 Statistiques
+echo -e "${GREEN}>> Statistiques${RESET}"
+curl -s $BASE_URL/stats
+echo -e "\n"
 
-echo "=== Ajout d’un corps INVALIDE (nom manquant) ==="
-curl -s -X POST $BASE_URL/api/corps \
-  -H "Content-Type: application/json" -H "x-api-key: $API_KEY" \
-  -d '{"prenom":"Alice","age":30}'
-
-echo "=== Test avec clé API INVALIDE ==="
-curl -s $BASE_URL/api/corps -H "x-api-key: FAUSSE_CLE"
-
-echo "=== Sortie du corps id=1 ==="
-curl -s -X PUT $BASE_URL/api/corps/1/sortie -H "x-api-key: $API_KEY"
-
-echo "=== Suppression du corps id=1 ==="
-curl -s -X DELETE $BASE_URL/api/corps/1 -H "x-api-key: $API_KEY"
+echo -e "${CYAN}=== ✅ Tests terminés ===${RESET}"
