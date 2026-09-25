@@ -1,53 +1,42 @@
 #!/bin/bash
 
-BASE_URL="http://localhost:3001/api"
+echo "=== 🚀 Test API Morgue ==="
 
-# Couleurs
-GREEN="\033[0;32m"
-CYAN="\033[0;36m"
-RESET="\033[0m"
+# Générer un numéro de dépôt unique basé sur l'heure
+NUM_DEPOT="D$(date +%s)"
 
-echo -e "${CYAN}=== 🚀 Test API Morgue ===${RESET}"
-
-# ➕ Ajouter un dépôt
-echo -e "${GREEN}>> Ajout dépôt${RESET}"
-curl -s -X POST $BASE_URL/depot \
+echo ">> Ajout dépôt"
+curl -s -X POST http://localhost:3000/api/depots \
   -H "Content-Type: application/json" \
-  -d '{"numero_depot":"D001","nom_defunt":"Jean","provenance":"Yaoundé","deposant":"Famille","casier":"C1","decharge_entree":"OK"}'
-echo -e "\n"
+  -d '{"numero_depot":"'"$NUM_DEPOT"'","nom":"Jean","lieu":"Yaoundé","famille":"Famille","casier":"C1"}'
 
-# 📋 Lister les dépôts
-echo -e "${GREEN}>> Liste dépôts${RESET}"
-curl -s $BASE_URL/depot
-echo -e "\n"
+echo
+echo ">> Liste dépôts"
+curl -s http://localhost:3000/api/depots
+echo
 
-# ➡️ Ajouter un transfert
-echo -e "${GREEN}>> Ajout transfert${RESET}"
-curl -s -X POST $BASE_URL/transfert \
+echo ">> Ajout transfert"
+curl -s -X POST http://localhost:3000/api/transferts \
   -H "Content-Type: application/json" \
-  -d '{"depot_id":1,"date_transfert":"2026-09-24","destination":"Douala","raison":"Autopsie","nom_retirant":"Docteur","decharge_transfert":"OK","agent":"AgentX"}'
-echo -e "\n"
+  -d '{"depot_id":1,"date":"2026-09-24","destination":"Douala","motif":"Autopsie","responsable":"Docteur","statut":"OK","agent":"AgentX"}'
 
-# 📋 Lister les transferts
-echo -e "${GREEN}>> Liste transferts${RESET}"
-curl -s $BASE_URL/transfert
-echo -e "\n"
+echo
+echo ">> Liste transferts"
+curl -s http://localhost:3000/api/transferts
+echo
 
-# ⚰️ Ajouter une sortie
-echo -e "${GREEN}>> Ajout sortie${RESET}"
-curl -s -X POST $BASE_URL/sortie \
+echo ">> Ajout sortie"
+curl -s -X POST http://localhost:3000/api/sorties \
   -H "Content-Type: application/json" \
-  -d '{"depot_id":1,"date_sortie":"2026-09-24","heure":"10:00","destination_finale":"Village","type_sortie":"Inhumation","nom_retirant":"Famille","decharge_sortie":"OK","frais_solde":50000}'
-echo -e "\n"
+  -d '{"depot_id":1,"date":"2026-09-24","heure":"10:00","destination":"Village","motif":"Inhumation","responsable":"Famille","statut":"OK","casier":1,"montant":50000}'
 
-# 📋 Lister les sorties
-echo -e "${GREEN}>> Liste sorties${RESET}"
-curl -s $BASE_URL/sortie
-echo -e "\n"
+echo
+echo ">> Liste sorties"
+curl -s http://localhost:3000/api/sorties
+echo
 
-# 📊 Statistiques
-echo -e "${GREEN}>> Statistiques${RESET}"
-curl -s $BASE_URL/stats
-echo -e "\n"
+echo ">> Statistiques"
+curl -s http://localhost:3000/api/statistiques
+echo
 
-echo -e "${CYAN}=== ✅ Tests terminés ===${RESET}"
+echo "=== ✅ Tests terminés ==="
