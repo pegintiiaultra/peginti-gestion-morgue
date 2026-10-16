@@ -1,20 +1,10 @@
-# Node.js
-node_modules/
-npm-debug.log
-yarn-error.log
-
-# Logs
-*.log
-
-# Environnements
-.env
-
-# SQLite DB
+application/backend/data/
+application/backend/data-demo/
 *.db
-
-# Build / cache
-dist/
-build/
-
-# PM2
-pids/
+*.db-wal
+*.db-shm
+secret.key
+*.log
+__pycache__/
+node_modules/
+.env

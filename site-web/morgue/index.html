@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PEGINTI Morgue — Registres et statistiques de la morgue</title>
+<meta name="description" content="PEGINTI Morgue, par TOMTECH.INC : registres de dépôt, de transfert, de levée et de sortie des corps, facturation des nuitées, statistiques sanitaires et gardes de 12 h ou 24 h pour les morgues du Cameroun.">
+<link rel="canonical" href="https://pegintichat.online/morgue/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="PEGINTI Morgue — Registres et statistiques de la morgue">
+<meta property="og:description" content="Les registres de la morgue tenus sur écran, avec facturation des levées, statistiques de flux et planning des gardes.">
+<meta property="og:url" content="https://pegintichat.online/morgue/">
+<meta name="theme-color" content="#16325C">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=IBM+Plex+Mono:wght@400;500&family=Public+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../site.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap top-in">
+    <a class="brand" href="../" aria-label="PEGINTI par TOMTECH.INC, accueil de la plateforme">
+      <svg viewBox="0 0 32 32" width="30" height="30" aria-hidden="true"><rect width="32" height="32" rx="7" fill="var(--navy)"/><path d="M13 7h6v6h6v6h-6v6h-6v-6H7v-6h6z" fill="#fff"/></svg>
+      <span>PEGINTI <b>Morgue</b></span>
+    </a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#registres">Registres</a>
+      <a href="#ecrans">Écrans</a>
+      <a href="#fonctions">Fonctions</a>
+      <a href="#securite">Sécurité</a>
+      <a href="#deploiement">Déploiement</a>
+      <a href="../">Tous les logiciels</a>
+    </nav>
+    <div class="top-actions">
+      <a class="link-client" href="https://morgue.pegintichat.online" rel="noopener">Espace client</a>
+      <a class="btn btn-line" href="#contact">Démonstration</a>
+      <a class="btn btn-amber" href="../telechargements/#peginti-morgue">Télécharger</a>
+    </div>
+  </div>
+</header>
+
+<main id="haut">
+
+<section class="hero">
+  <div class="wrap hero-in">
+    <div class="hero-text">
+      <p class="eyebrow">Service de thanatopraxie</p>
+      <h1>Les registres de la morgue, tenus sans perte ni calcul à la main.</h1>
+      <p class="lead">PEGINTI Morgue enregistre chaque dépôt, transfert, levée et sortie définitive, calcule les nuitées de conservation et produit les statistiques du service. Tout s'imprime avec l'en-tête de l'établissement et les zones de visa.</p>
+      <div class="cta-row">
+        <a class="btn btn-navy" href="../telechargements/#peginti-morgue">Télécharger le logiciel</a>
+        <a class="btn btn-line" href="#contact">Demander une démonstration</a>
+        
+      </div>
+      <p class="small muted">Pour les morgues d'hôpitaux et de structures de santé au Cameroun.</p>
+    </div>
+
+    <figure class="ledger" aria-label="Extrait du registre d'entrée, données fictives">
+      <figcaption>Registre d'entrée · extrait fictif</figcaption>
+      <div class="ledger-head"><span>N° d'ordre</span><span>Défunt</span><span>Cas</span><span>Box</span></div>
+      <div class="ledger-row"><span class="mono">41/2026</span><span>DÉMO 47 · 87 ans</span><span>Interne<small>Maternité</small></span><span class="mono">B2b</span></div>
+      <div class="ledger-row"><span class="mono">40/2026</span><span>DÉMO 23 · 20 ans</span><span>Externe</span><span class="mono">B6b</span></div>
+      <div class="ledger-row"><span class="mono">39/2026</span><span>DÉMO 27 · 20 ans</span><span>Externe</span><span class="mono">B2a</span></div>
+      <div class="ledger-row"><span class="mono">38/2026</span><span>DÉMO 05 · 44 ans</span><span>Interne<small>Médecine interne</small></span><span class="mono">B3a</span></div>
+      <div class="ledger-foot">Chaque dépôt reçoit un numéro d'ordre annuel et un emplacement unique : box, division et lettre.</div>
+    </figure>
+  </div>
+</section>
+
+<section class="sec" id="registres">
+  <div class="wrap">
+    <p class="eyebrow">Les registres</p>
+    <h2>Un dossier par défunt, quatre registres qui se suivent.</h2>
+    <p class="sec-lead">Un corps déposé ouvre un dossier. Il peut être transféré, ou levé puis sorti. L'application empêche une sortie définitive avant la levée, et un seul corps occupe un emplacement.</p>
+
+    <div class="reg-grid">
+      <article class="reg reg-1">
+        <h3>1. Dépôt</h3>
+        <p>Numéro d'ordre, date et heure, nom et âge du défunt, responsable du corps (contact, adresse, visa), cas externe ou interne avec le service du décès, box de conservation, thanatopracteur de service.</p>
+      </article>
+      <article class="reg reg-2">
+        <h3>2. Transfert</h3>
+        <p>Mêmes informations que le dépôt, avec la raison du transfert et le lieu. L'emplacement est libéré au moment du transfert.</p>
+      </article>
+      <article class="reg reg-3">
+        <h3>3. Levée</h3>
+        <p>Nuitées en chambre commune ou individuelle, majoration automatique hors des heures de levée, location de chapelle, versements et reste à payer.</p>
+      </article>
+      <article class="reg reg-4">
+        <h3>4. Sortie définitive</h3>
+        <p>Genre de mort du certificat, région, département, arrondissement et village d'inhumation, date, plan de localisation archivé avec le dossier.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec-tint" id="ecrans">
+  <div class="wrap">
+    <p class="eyebrow">L'application</p>
+    <h2>Ce que voit le thanatopracteur et la direction.</h2>
+    <p class="sec-lead">Captures d'écran réalisées avec des données de démonstration.</p>
+
+    <div class="shot">
+      <div class="shot-text">
+        <h3>Le registre d'entrée</h3>
+        <p>Recherche par nom, responsable ou numéro. L'état du dossier apparaît en un coup d'œil : en conservation, transféré, levé. Le registre s'exporte en Excel ou CSV et s'imprime en A4 paysage.</p>
+      </div>
+      <img src="../assets/registre-depot.webp" width="1280" height="771" loading="lazy" alt="Registre d'entrée avec numéros d'ordre, défunts, cas externes et internes, responsables et emplacements">
+    </div>
+
+    <div class="shot shot-rev">
+      <div class="shot-text">
+        <h3>Les statistiques du service</h3>
+        <p>Corps enregistrés, transférés et sortis par mois, raison dominante des transferts, cas externes et internes, service ayant enregistré le plus de décès. Les chiffres viennent du trafic réellement enregistré, pas de la capacité de la chambre froide.</p>
+      </div>
+      <img src="../assets/statistiques.webp" width="1280" height="853" loading="lazy" alt="Diagrammes des flux mensuels, répartition des cas externes et internes et décès par service hospitalier">
+    </div>
+
+    <div class="shot">
+      <div class="shot-text">
+        <h3>Le planning des gardes</h3>
+        <p>Garde de 12 h (permanence 7h30–17h00 et garde 17h00–7h30) ou garde de 24 h (7h30 à 7h30), au choix de chaque hôpital. Présence obligatoire le jeudi et le vendredi, sauf pour l'équipe sortante. Levée et vidange de la chambre froide le mercredi.</p>
+      </div>
+      <img src="../assets/gardes.webp" width="1280" height="771" loading="lazy" alt="Planning mensuel des gardes avec repères de présence obligatoire et de levée du mercredi">
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="fonctions">
+  <div class="wrap">
+    <p class="eyebrow">Fonctions</p>
+    <h2>Ce qui est inclus.</h2>
+    <dl class="feat">
+      <div><dt>Facturation des levées</dt><dd>Tarifs configurés par l'hôpital : nuitées, chapelles, majoration, frais de transfert. Les montants se calculent seuls et les impayés sont listés.</dd></div>
+      <div><dt>Statistiques de flux</dt><dd>Par mois, par cas, par service, par genre de mort, avec le chiffre d'affaires des douze derniers mois.</dd></div>
+      <div><dt>Plan des box</dt><dd>Étagères et divisions saisies par l'administration, occupation en temps réel, alerte quand un box est saturé.</dd></div>
+      <div><dt>Recherche rapide</dt><dd>Un numéro, un nom ou un téléphone retrouve le dossier et son historique.</dd></div>
+      <div><dt>Annonces internes</dt><dd>L'administration écrit un message que tous les comptes reçoivent dans leur boîte de réception.</dd></div>
+      <div><dt>Impression et export</dt><dd>Registres, planning et journal en A4 paysage avec l'en-tête de l'établissement ; export Excel et CSV.</dd></div>
+      <div><dt>Application sur téléphone</dt><dd>S'installe sur l'écran d'accueil du téléphone ou de l'ordinateur et s'adapte à la taille de l'écran.</dd></div>
+      <div><dt>Modification tracée</dt><dd>Une saisie corrigée ou annulée garde son motif, son auteur et sa date.</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="sec sec-navy" id="securite">
+  <div class="wrap sec-two">
+    <div>
+      <p class="eyebrow eyebrow-light">Sécurité</p>
+      <h2>Des données de santé protégées, et un journal que l'établissement peut lire.</h2>
+      <p class="sec-lead">Les noms des défunts et des responsables sont des données personnelles. L'accès est contrôlé et chaque action est enregistrée.</p>
+    </div>
+    <ul class="checks">
+      <li><b>Trois rôles.</b> Le thanatopracteur seul saisit et modifie les registres. L'administrateur supervise et paramètre. Le super administrateur, unique, gère tous les comptes.</li>
+      <li><b>Double authentification.</b> Code à 6 chiffres sur le téléphone, avec codes de secours. Exigée des administrateurs sur une installation neuve.</li>
+      <li><b>Journal de sécurité.</b> Connexions, créations, modifications et annulations, consultables et imprimables avec signatures.</li>
+      <li><b>Accès chiffré.</b> Connexion en HTTPS, mots de passe hachés, blocage après plusieurs échecs.</li>
+      <li><b>Sauvegardes.</b> Copies automatiques de la base, restauration testée à la mise en service.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec" id="deploiement">
+  <div class="wrap">
+    <p class="eyebrow">Déploiement</p>
+    <h2>Chez vous, chez nous, ou sur un boîtier à demeure.</h2>
+    <p class="sec-lead">Le logiciel est le même. Seuls l'emplacement du serveur, l'accès et le niveau de service changent.</p>
+
+    <div class="models">
+      <article>
+        <h3>Sur votre serveur</h3>
+        <p>L'hôpital dispose déjà d'un serveur ou d'un ordinateur dédié. TOMTECH.INC y installe l'application, la paramètre et forme l'équipe. Les données restent dans l'établissement.</p>
+      </article>
+      <article>
+        <h3>Hébergé par TOMTECH.INC</h3>
+        <p>Pas de serveur sur place. L'application est accessible par une adresse sécurisée propre à l'hôpital, avec sauvegardes et mises à jour assurées par nous.</p>
+      </article>
+      <article>
+        <h3>Boîtier sur site</h3>
+        <p>Un petit serveur installé dans l'établissement, fonctionnant en réseau local, avec ou sans connexion Internet.</p>
+      </article>
+    </div>
+
+    <ol class="steps">
+      <li><b>Audit</b><span>Visite, relevé des box, des services et des équipes de garde.</span></li>
+      <li><b>Installation</b><span>Mise en place, paramétrage des tarifs, création des comptes.</span></li>
+      <li><b>Formation</b><span>Thanatopracteurs, administrateur et direction, avec une fiche mémo.</span></li>
+      <li><b>Suivi</b><span>Sauvegardes, mises à jour et assistance selon le niveau choisi.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="sec sec-tint" id="faq">
+  <div class="wrap faq-wrap">
+    <div>
+      <p class="eyebrow">Questions fréquentes</p>
+      <h2>Avant de décider.</h2>
+    </div>
+    <div class="faq">
+      <details>
+        <summary>L'application fonctionne-t-elle sans Internet ?</summary>
+        <p>Oui, en réseau local : les ordinateurs et téléphones de l'établissement se connectent au serveur de la morgue sans accès Internet. Les copies de travail hors ligne sur plusieurs appareils avec fusion ensuite ne sont pas proposées pour l'instant.</p>
+      </details>
+      <details>
+        <summary>À qui appartiennent les données ?</summary>
+        <p>À l'établissement. TOMTECH.INC intervient comme prestataire, sur instruction écrite, et rend ou détruit les copies à la fin du contrat.</p>
+      </details>
+      <details>
+        <summary>Peut-on adapter les tarifs et les services de l'hôpital ?</summary>
+        <p>Oui. Les tarifs de nuitée, de chapelle, de majoration et de transfert, les services hospitaliers, les raisons de transfert, les box et les équipes de garde se paramètrent depuis l'application.</p>
+      </details>
+      <details>
+        <summary>Que se passe-t-il si le thanatopracteur perd son téléphone ?</summary>
+        <p>Il se connecte avec un code de secours, ou l'administration réinitialise sa double authentification après vérification de son identité.</p>
+      </details>
+      <details>
+        <summary>Combien ça coûte ?</summary>
+        <p>Le prix dépend du modèle de déploiement, du nombre de sites et du niveau de maintenance. Écrivez-nous pour recevoir un devis adapté à votre établissement.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="sec contact" id="contact">
+  <div class="wrap contact-in">
+    <div>
+      <p class="eyebrow">Contact</p>
+      <h2>Demandez une démonstration.</h2>
+      <p class="sec-lead">Dites-nous quel est votre établissement. Nous vous répondons avec une présentation sur des données fictives, puis un devis.</p>
+      <p class="coord">
+        <span>Écrire à</span> <b class="mono" id="email-txt">contact@pegintichat.online</b>
+        <button class="copy" type="button" id="copy-email">Copier</button>
+      </p>
+      <p class="coord" id="tel-line" hidden><span>Téléphone et WhatsApp</span> <b class="mono" id="tel-txt"></b></p>
+    </div>
+    <form class="form" id="contact-form" novalidate>
+      <label for="f-nom">Votre nom</label>
+      <input id="f-nom" name="nom" autocomplete="name" required>
+      <label for="f-etab">Établissement</label>
+      <input id="f-etab" name="etab" autocomplete="organization" placeholder="Hôpital, clinique, morgue">
+      <label for="f-ville">Ville</label>
+      <input id="f-ville" name="ville" autocomplete="address-level2">
+      <label for="f-modele">Déploiement envisagé</label>
+      <select id="f-modele" name="modele">
+        <option>Je ne sais pas encore</option>
+        <option>Sur notre serveur</option>
+        <option>Hébergé par TOMTECH.INC</option>
+        <option>Boîtier sur site</option>
+      </select>
+      <label for="f-msg">Message</label>
+      <textarea id="f-msg" name="msg" rows="4"></textarea>
+      <button class="btn btn-navy" type="submit">Préparer mon e-mail</button>
+      <p class="small muted" id="form-note">Le bouton ouvre votre application de messagerie avec le message prêt à envoyer. Ce site ne conserve aucune information saisie.</p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <div>
+      <b>PEGINTI Morgue</b> est un logiciel de <b>TOMTECH.INC</b>, solutions numériques, Cameroun.
+    </div>
+    <div class="small">Ce site n'utilise ni cookies ni outil de mesure d'audience. © <span id="an">2026</span> TOMTECH.INC</div>
+  </div>
+</footer>
+
+<script src="../site.js"></script>
+</body>
+</html>

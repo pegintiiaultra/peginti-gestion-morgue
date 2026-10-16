@@ -1,0 +1,35 @@
+PEGINTI MORGUE — TOMTECH.INC — Paquet complet (version 1.0.0.0)
+
+CONTENU
+  INSTALLER.sh / INSTALLER.bat   installation automatique (à lancer en premier)
+  application/                   l'application (serveur + interface)
+  documentation/                 cahier des charges, guide d'installation, fiches techniques, passage du téléphone au serveur (PDF)
+  site-web/ , site-outils/       plateforme pegintichat.online (catalogue + téléchargements) et son script de mise à jour
+
+INSTALLATION AUTOMATIQUE (une seule commande, selon votre appareil)
+
+  ANDROID (Termux, installé depuis F-Droid)
+    termux-setup-storage
+    unzip -o /storage/emulated/0/Download/PEGINTI-Morgue-v1.0.0.0.zip -d ~
+    cd ~/PEGINTI-Morgue-v1.0.0.0 && sh INSTALLER.sh
+
+  PC WINDOWS
+    Décompressez le zip, puis double-cliquez INSTALLER.bat (Python est installé automatiquement si absent).
+
+  LINUX / MAC
+    unzip PEGINTI-Morgue-v1.0.0.0.zip && cd PEGINTI-Morgue-v1.0.0.0 && sh INSTALLER.sh
+
+  Ensuite ouvrez http://localhost:3001 — identifiant : admin — mot de passe provisoire : Admin123! (changement obligatoire).
+  DOUBLE AUTHENTIFICATION : exigée de TOUS les comptes (application d'authentification : Google Authenticator, Microsoft Authenticator, Aegis...). Chaque utilisateur l'active à sa première connexion.
+
+MISE À JOUR SANS PERTE DE DONNÉES
+  Décompressez la nouvelle version PAR-DESSUS le dossier existant, puis relancez : sh INSTALLER.sh
+  (l'installateur détecte la base existante et passe seul en mise à jour ; rien n'est effacé).
+  Installation créée avec une version antérieure : ajoutez une fois, dans application/backend :  python manage.py mfa tous
+  Puis (si PM2 est utilisé) : pm2 restart morgue
+
+PIÈGES FRÉQUENTS
+  - Dossier différent de l'ancien alors que PM2 tourne : pm2 delete morgue ; puis depuis le nouveau application/ : pm2 start ecosystem.config.js && pm2 save
+  - Ancienne interface affichée sur le domaine : Cloudflare > Caching > Purge Everything, puis rouvrez l'application.
+
+Détail complet : documentation/guide-installation-peginti-morgue.pdf ou application/GUIDE-INSTALLATION.md.

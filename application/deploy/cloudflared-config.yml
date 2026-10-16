@@ -1,0 +1,10 @@
+# Cloudflare Tunnel : https://pegintichat.online  ->  http://localhost:3001
+# 1) cloudflared tunnel login ; cloudflared tunnel create peginti
+# 2) cloudflared tunnel route dns peginti pegintichat.online
+# 3) remplacer <ID> ci-dessous, puis : cloudflared tunnel --config deploy/cloudflared-config.yml run peginti
+tunnel: <ID>
+credentials-file: /data/data/com.termux/files/home/.cloudflared/<ID>.json
+ingress:
+  - hostname: pegintichat.online
+    service: http://localhost:3001
+  - service: http_status:404

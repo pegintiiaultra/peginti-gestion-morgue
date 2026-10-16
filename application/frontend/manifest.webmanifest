@@ -1,0 +1,16 @@
+{
+  "name": "Morgue PEGINTI — Registres et statistiques",
+  "short_name": "Morgue",
+  "description": "Registres de la morgue : dépôt, transfert, levée, sortie définitive, statistiques et gardes.",
+  "lang": "fr",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#16325C",
+  "theme_color": "#16325C",
+  "icons": [
+    {"src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any"},
+    {"src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable"}
+  ]
+}

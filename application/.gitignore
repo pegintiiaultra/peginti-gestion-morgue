@@ -1,0 +1,10 @@
+backend/data/
+backend/*.db
+*.db
+*.db-wal
+*.db-shm
+secret.key
+erreurs.log
+__pycache__/
+*.pyc
+node_modules/

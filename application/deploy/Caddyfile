@@ -1,0 +1,5 @@
+# Alternative sur un serveur (VPS) : HTTPS automatique pour pegintichat.online
+pegintichat.online {
+    encode gzip
+    reverse_proxy 127.0.0.1:3001
+}

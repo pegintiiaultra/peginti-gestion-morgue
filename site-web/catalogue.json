@@ -1,0 +1,64 @@
+{
+  "editeur": "TOMTECH.INC",
+  "contact": "contact@pegintichat.online",
+  "produits": [
+    {
+      "id": "peginti-morgue",
+      "nom": "PEGINTI Morgue",
+      "slogan": "Registres, statistiques et gardes des morgues",
+      "description": "Registres de dépôt, de transfert, de levée et de sortie, facturation des nuitées, statistiques de flux et planning des gardes de 12 h ou 24 h, pour les morgues du Cameroun.",
+      "statut": "disponible",
+      "acces": "libre",
+      "page": "morgue/",
+      "version": "1.0.0.0",
+      "date": "2026-10-11",
+      "plateformes": [
+        "Android (Termux)",
+        "Windows",
+        "Linux / macOS"
+      ],
+      "fichiers": [
+        {
+          "libelle": "Paquet complet (application, documentation, site vitrine)",
+          "fichier": "telechargements/fichiers/PEGINTI-Morgue-v1.0.0.0.zip",
+          "principal": true,
+          "taille": "1,1 Mo",
+          "sha256": "cd10ba62ee378520deaf45590ed0bae05ef40501ca9d980c7b9251ba5a911f92"
+        }
+      ],
+      "documents": [
+        {
+          "libelle": "Guide d'installation (PDF)",
+          "fichier": "telechargements/fichiers/PEGINTI-Morgue-guide-installation.pdf"
+        },
+        {
+          "libelle": "Cahier des charges (PDF)",
+          "fichier": "telechargements/fichiers/PEGINTI-Morgue-cahier-des-charges.pdf"
+        }
+      ],
+      "installation": [
+        "Android : installez Termux (depuis F-Droid), puis tapez : termux-setup-storage",
+        "Android : unzip -o /storage/emulated/0/Download/PEGINTI-Morgue-v1.0.0.0.zip -d ~ && cd ~/PEGINTI-Morgue-v1.0.0.0 && sh INSTALLER.sh",
+        "Windows : décompressez le zip puis double-cliquez INSTALLER.bat (Python est installé automatiquement si absent)",
+        "Linux / macOS : décompressez le zip puis sh INSTALLER.sh",
+        "Ouvrez http://localhost:3001 — compte initial : admin / Admin123! (changement obligatoire). La double authentification est exigée de tous les comptes : prévoyez Google/Microsoft Authenticator, Aegis ou FreeOTP",
+        "Mise à jour sans perte de données : décompressez par-dessus l'ancien dossier et relancez INSTALLER (la base existante est détectée automatiquement)"
+      ]
+    },
+    {
+      "id": "peginti-ia",
+      "nom": "PEGINTI IA",
+      "slogan": "Bientôt disponible",
+      "description": "Le prochain logiciel de la gamme PEGINTI. Le téléchargement sera proposé ici dès sa publication.",
+      "statut": "bientot",
+      "acces": "libre",
+      "page": "",
+      "version": "",
+      "date": "",
+      "plateformes": [],
+      "fichiers": [],
+      "documents": [],
+      "installation": []
+    }
+  ]
+}

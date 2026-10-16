@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#16325C">
+  <title>PEGINTI Morgue</title>
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="icon" href="/icons/icon-192.png">
+  <link rel="apple-touch-icon" href="/icons/icon-192.png">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div id="login" class="login hidden"></div>
+  <div id="app" class="app hidden">
+    <aside class="side">
+      <div class="brand">
+        <div class="brand-logo" aria-hidden="true">✚</div>
+        <div><div class="brand-name">MORGUE PEGINTI</div><div class="brand-sub">Registres &amp; statistiques</div></div>
+      </div>
+      <nav id="nav" class="nav"></nav>
+      <div class="side-foot" id="side-foot"></div>
+    </aside>
+    <div class="content">
+      <header class="topbar">
+        <form id="quick" class="quick" autocomplete="off">
+          <span class="quick-icon" aria-hidden="true">⌕</span>
+          <input id="quick-input" type="search" placeholder="N°, nom ou téléphone" aria-label="Recherche rapide">
+        </form>
+      </header>
+      <main id="main" class="main"></main>
+      <footer class="secbar" id="secbar"></footer>
+    </div>
+  </div>
+  <div id="toasts" class="toasts" aria-live="polite"></div>
+  <script type="module" src="/js/main.js"></script>
+</body>
+</html>
